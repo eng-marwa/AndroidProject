@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_120sdp"
+    android:layout_marginBottom="@dimen/_14sdp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivPopularMovie"
+        android:layout_width="@dimen/_66sdp"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundedImageView"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tvMovieTitle"
+        style="@style/MovieTitleStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:maxLines="2"
+        android:paddingVertical="@dimen/_2sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivPopularMovie"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Venom Let There Be Carnage" />
+
+    <TextView
+        android:id="@+id/tvRating"
+        style="@style/RatingTitleStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_50sdp"
+        android:drawablePadding="@dimen/_4sdp"
+        android:lines="1"
+        app:drawableStartCompat="@drawable/star"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvMovieTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"
+        tools:text="Venom Let There Be Carnage" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTags"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvMovieTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvRating"
+        tools:itemCount="5"
+        tools:listitem="@layout/tag_item" />
+
+
+    <TextView
+        android:id="@+id/tvDate"
+        style="@style/RatingTitleStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_50sdp"
+        android:drawablePadding="@dimen/_4sdp"
+        android:lines="1"
+        android:textColor="@color/black"
+        app:drawableStartCompat="@drawable/clock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvMovieTitle"
+        app:layout_constraintTop_toBottomOf="@+id/rvTags"
+        tools:text="Venom Let There Be Carnage" />
+</androidx.constraintlayout.widget.ConstraintLayout>
